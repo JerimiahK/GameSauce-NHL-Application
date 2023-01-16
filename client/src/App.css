@@ -1,38 +1,240 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-position: center;
+  background-size: cover;
+  background-image: url(../assets/images/chris-liverani-5oZ9uVx7buc-unsplash.jpg);
+}
+
+.navbar {
+  background-color: rgba(13, 13, 13, 0.9215686275);
+}
+
+#navbarText {
+  color: #fff;
+  font-family: "Graduate", cursive;
+}
+
+#navbarBtn {
+  color: #fff;
+}
+
+.dropdown-item {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.collapseBackground {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: rgba(13, 13, 13, 0.9215686275);
+}
+
+#nextButton {
+  position: relative;
+  bottom: 2%;
+  left: 65%;
+  background-color: rgba(13, 13, 13, 0.6862745098);
+  color: #fff;
+  width: 25%;
+}
+
+.currentGame {
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 20px;
+  height: 100vh;
+}
+
+.currentGameBox {
+  background-color: rgba(13, 13, 13, 0.9215686275);
+  height: 100%;
+  color: #fff;
+  border: 5px solid #fffefe;
+  border-radius: 30px;
+}
+
+.currentGameHeader {
+  height: 40%;
+  text-align: center;
+  border-bottom: 5px solid rgb(255, 254, 254);
+}
+
+.currentGameHeader h5 {
+  margin: 15px;
+  font-weight: bolder;
+}
+
+.headerContainer {
+  height: 90%;
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+}
+
+.headerScoreDash {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.headerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.headerTeam {
+  font-weight: bolder;
+  font-size: 140%;
+}
+
+.headerPeriod {
+  font-weight: 800;
+  font-size: 125%;
+  margin: 20px 0 0 0;
+}
+
+.headerTime {
+  font-weight: 800;
+  font-size: 125%;
+}
+
+#headerLogo {
+  width: 40%;
+  height: auto;
+}
+
+.headerScore {
+  font-size: 350%;
+}
+
+#statsColumn {
+  font-weight: 700;
+  color: #fff;
+  height: 58%;
+  width: 100%;
+}
+
+.row {
+  height: 25%;
+}
+
+.row p {
+  margin-bottom: 0;
+}
+
+.lastRow {
+  border-bottom: none;
+}
+
+.columnLeft {
+  border-right: 5px solid #fffefe;
+}
+
+.liveStat {
+  font-size: 120%;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.staticValue {
+  font-size: 120%;
+  text-decoration: underline;
+}
+
+#loginForm {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#loginBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form-label {
+  color: #fff;
+}
+
+.loginButton {
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+#loginCreate {
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#todayGameText {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#allGames {
+  overflow: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#allGamesBox {
+  text-decoration: none;
+  color: #fff;
+  margin: 10px;
+  font-weight: 800;
+  font-size: 95%;
+  background-color: rgba(13, 13, 13, 0.8392156863);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
+  height: 13%;
+  border: 1px solid black;
+  box-shadow: 0px 0px 6px red;
+}
+
+.allGamesRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.allGamesTeamsBox {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#allGamesTime {
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.gameStatus {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameScore {
+  padding-right: 10px;
 }
