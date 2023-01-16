@@ -1,14 +1,17 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend packages",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "watch": "nodemon",
     "seed": "node seeders/seed.js"
   },
-  "keywords": [],
+  "keywords": [
+    "backend",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
