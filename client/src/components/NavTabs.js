@@ -8,32 +8,38 @@ export default function NavTabs() {
   return (
     <AppBar
       sx={{
-        bgcolor: "black",
+        bgcolor: "#0C0032",
         borderBottom: "2px solid silver",
         boxShadow: "0 4px 15px -1px black",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        opacity: "83%",
       }}
       position="static"
     >
       <Toolbar>
         <div>
           <a id="navbarText" href="/">
-            The NHL Project
+            Game Sauce
           </a>
         </div>
       </Toolbar>
       <Toolbar variant="dense">
-        <Typography
-          sx={{ padding: "30px", width: "100%" }}
-          variant="p"
-          component="p"
-        >
-          Games
+        <Typography>
+          <a className="navbar-item" href="/Home">
+            Home
+          </a>
         </Typography>
-        <Typography variant="p" component="p">
-          Login
+        <Typography>
+          <a className="navbar-item" href="/Home">
+            Games
+          </a>
+        </Typography>
+        <Typography>
+          <a className="navbar-item" href="/Login">
+            Login
+          </a>
         </Typography>
       </Toolbar>
     </AppBar>

@@ -9,10 +9,10 @@
   background-size: cover;
   background-color: #aaaaaa;
   /* background-image: url(../assets/images/chris-liverani-5oZ9uVx7buc-unsplash.jpg); */
- */
+
 
 .page {
-  background-color: #0d0d0d;
+  background-color: #282828;
   position: fixed;
   left: 0;
   top: 0;
@@ -20,26 +20,22 @@
   height: 100%;
 }
 
-.navbar {
-  text-align: center;
-  background-color: rgba(13, 13, 13, 0.9215686275);
-}
-
 #navbarText {
-  color: silver;
-  font-family: "Graduate", cursive;
+  color: #fff;
+  font-family: 'Arvo', serif;
+  text-decoration: none;
   font-size: 150%;
   flex-shrink: 2;
 }
 
-.dropdown-item {
+.navbar-item {
   text-align: center;
   text-decoration: none;
   color: #fff;
+  padding: 10px;
 }
 
 .currentGame {
-  font-family: "Roboto Condensed", sans-serif;
   padding: 20px;
   height: 100vh;
 }
