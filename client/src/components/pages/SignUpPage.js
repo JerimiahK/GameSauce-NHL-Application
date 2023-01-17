@@ -2,9 +2,9 @@ export default function SignUp() {
   return (
     <div class="currentGame">
       <div id="loginBox" class="currentGameBox">
-        <form id="signUpForm">
+        <form id="loginForm">
           <h1>SIGN-UP</h1>
-          <div class="mb-3">
+          <div class="inputBox">
             <label for="userEmail" name="email" class="form-label">
               Email Address
             </label>
@@ -15,7 +15,7 @@ export default function SignUp() {
               id="userSignUpEmail"
             />
           </div>
-          <div class="mb-3">
+          <div class="inputBox">
             <label for="userPassword" name="password" class="form-label">
               Create A Password
             </label>
@@ -26,9 +26,13 @@ export default function SignUp() {
               id="userSignUpPassword"
             />
           </div>
-          <button type="submit" class="btn loginButton">
-            Create Account
-          </button>
+          <div className="formButtonContainer">
+            <button id="loginButton" type="submit" class="btn formButton">
+              <a className="formButton" href="/">
+                Login
+              </a>
+            </button>
+          </div>
         </form>
         <p id="loginCreate">
           Already Have An Account? Click <a href="/pages/users/login">Here</a>{" "}

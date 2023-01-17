@@ -4,7 +4,7 @@ export default function Login() {
       <div id="loginBox" class="currentGameBox">
         <form id="loginForm">
           <h1>LOGIN</h1>
-          <div class="mb-3">
+          <div className="inputBox">
             <label for="userEmail" name="email" class="form-label">
               Email Address
             </label>
@@ -15,7 +15,7 @@ export default function Login() {
               id="userLoginEmail"
             />
           </div>
-          <div class="mb-3">
+          <div className="inputBox">
             <label for="userPassword" name="password" class="form-label">
               Password
             </label>
@@ -26,9 +26,13 @@ export default function Login() {
               id="userLoginPassword"
             />
           </div>
-          <button id="loginButton" type="submit" class="btn loginButton">
-            Login
-          </button>
+          <div className="formButtonContainer">
+            <button id="loginButton" type="submit" class="btn formButton">
+              <a className="formButton" href="/">
+                Login
+              </a>
+            </button>
+          </div>
         </form>
         <p id="loginCreate">
           Don't Have An Account? Click <a href="/signup">Here</a> To Create An

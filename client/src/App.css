@@ -138,6 +138,9 @@
 }
 
 #loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -154,16 +157,27 @@
   color: #92b9e0;
 }
 
-.loginButton {
+.formButton {
+  text-decoration: none;
   text-align: center;
   margin: 10px;
   background-color: #92b9e0;
   color: #282828;
 }
 
+.formButtonContainer {
+  width: 100%;
+  text-align: center;
+}
+
 #loginCreate {
   color: #C5C6C7;
   text-align: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
 }
 
 #todayGameText {
