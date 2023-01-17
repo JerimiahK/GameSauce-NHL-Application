@@ -32,6 +32,7 @@ const resolvers = {
       parent,
       { email, password }
     ) => {
+      console.log(email);
       const user = await User.create({
         email,
         password,

@@ -1,4 +1,4 @@
 const User = require("./User");
 const favoriteTeam = require("./FavoriteTeams");
 
-module.export = { User, favoriteTeam };
+module.exports = { User, favoriteTeam };
