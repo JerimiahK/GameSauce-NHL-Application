@@ -1,56 +1,9 @@
-// import * as React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import Toolbar from "@mui/material/Toolbar";
-// import Typography from "@mui/material/Typography";
-
-// export default function NavTabs() {
-//   return (
-//     <AppBar
-//       sx={{
-//         bgcolor: "#3500D3",
-//         borderBottom: "2px solid silver",
-//         boxShadow: "0 4px 15px -1px black",
-//         display: "flex",
-//         flexDirection: "row",
-//         justifyContent: "space-between",
-//         opacity: "83%",
-//       }}
-//       position="static"
-//     >
-//       <Toolbar>
-//         <div>
-//           <a id="navbarText" href="/">
-//             Game Sauce
-//           </a>
-//         </div>
-//       </Toolbar>
-//       <Toolbar variant="dense">
-//         <Typography>
-//           <a className="navbar-item" href="/Home">
-//             Home
-//           </a>
-//         </Typography>
-//         <Typography>
-//           <a className="navbar-item" href="/Home">
-//             Games
-//           </a>
-//         </Typography>
-//         <Typography>
-//           <a className="navbar-item" href="/Login">
-//             Login
-//           </a>
-//         </Typography>
-//       </Toolbar>
-//     </AppBar>
-//   );
-// }
-
-import { Box, Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 import SportsHockeyIcon from "@mui/icons-material/SportsHockey";
 import LoginIcon from "@mui/icons-material/Login";
+
 
 export default function NavTabs() {
   return (
@@ -68,7 +21,15 @@ export default function NavTabs() {
               color: "#C5C6C7",
             }}
           >
-            Home
+            <Link
+              sx={{
+                textDecoration: "none",
+              }}
+              color="inherit"
+              href="/"
+            >
+              Home
+            </Link>
           </Typography>
         </Button>
         <Button sx={{ minWidth: "0px" }}>
@@ -78,7 +39,15 @@ export default function NavTabs() {
               color: "#C5C6C7",
             }}
           >
-            Games
+            <Link
+              sx={{
+                textDecoration: "none",
+              }}
+              color="inherit"
+              href="/games"
+            >
+              Games
+            </Link>
           </Typography>
         </Button>
         <Button sx={{ minWidth: "0px" }}>
@@ -88,7 +57,15 @@ export default function NavTabs() {
               color: "#C5C6C7",
             }}
           >
-            Login
+            <Link
+              sx={{
+                textDecoration: "none",
+              }}
+              color="inherit"
+              href="/login"
+            >
+              Login
+            </Link>
           </Typography>
         </Button>
       </div>
