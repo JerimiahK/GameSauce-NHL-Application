@@ -36,30 +36,21 @@
 }
 
 .currentGame {
-  padding: 0px 0px 0px 0px;
   height: 100vh;
+  margin-top: 20px;
 }
 
 .currentGameBox {
   background-color: #282828;
   height: 100%;
   color: #C5C6C7;
-  border-radius: 30px;
+  border-radius: 7px;
   box-shadow: 0px 0px 12px 1px #92b9e0;
 }
 
 .currentGameHeader {
   height: 40%;
   text-align: center;
-}
-
-.currentGameHeader h5 {
-  margin: 15px;
-  font-weight: bolder;
-}
-
-.headerContainer {
-  height: 90%;
 }
 
 .headerRow {

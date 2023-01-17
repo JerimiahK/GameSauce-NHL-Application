@@ -2,8 +2,6 @@ export default function Homepage() {
   return (
     <div className="currentGameBox">
       <div className="currentGameHeader">
-        <h5 className="currentGameText">Most Current Game</h5>
-        <div className="headerContainer">
           <div className="headerRow">
             <div className="col-5 headerColumn">
               <h6 className="headerTeam">Anaheim Ducks</h6>
@@ -20,7 +18,6 @@ export default function Homepage() {
               <h1 className="headerScore">0</h1>
             </div>
           </div>
-        </div>
       </div>
       <div id="statsColumn" className="container text-center">
         <div className="row">
