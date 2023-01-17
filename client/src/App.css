@@ -151,12 +151,14 @@
 }
 
 .form-label {
-  color: #C5C6C7;
+  color: #92b9e0;
 }
 
 .loginButton {
-  background-color: #0d0d0d;
-  color: #C5C6C7;
+  text-align: center;
+  margin: 10px;
+  background-color: #92b9e0;
+  color: #282828;
 }
 
 #loginCreate {

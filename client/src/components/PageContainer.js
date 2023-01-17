@@ -3,7 +3,7 @@ import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
 import Games from "./pages/Games"
 import Login from "./pages/LoginPage";
-// import SignUp from "../pages/SignUpPage";
+import SignUp from "./pages/SignUpPage";
 
 export default function PageContainer() {
   return (
@@ -14,6 +14,7 @@ export default function PageContainer() {
           <Route path="/" element={<Homepage />} />
           <Route path="/games" element={<Games />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
     </div>
