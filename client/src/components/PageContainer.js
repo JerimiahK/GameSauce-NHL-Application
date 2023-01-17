@@ -8,8 +8,8 @@ import Homepage from "./pages/Homepage";
 export default function PageContainer() {
   return (
     <div className="page">
-        {/* <NavTabs /> */}
-      <div id="currentGame" class="currentGame">
+      <NavTabs />
+      <div id="currentGame" className="currentGame">
         <Homepage />
       </div>
     </div>
