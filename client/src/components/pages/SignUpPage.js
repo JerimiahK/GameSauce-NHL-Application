@@ -5,7 +5,7 @@ import { ADD_USER } from "../../utils/mutations";
 
 export default function SignUp() {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const addUser = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -38,6 +38,7 @@ export default function SignUp() {
             </label>
             <input
               type="email"
+              value={formState.email}
               className="form-control"
               placeholder="Enter Email"
               id="userSignUpEmail"
@@ -53,6 +54,7 @@ export default function SignUp() {
               Create A Password
             </label>
             <input
+            value={formState.password}
               type="password"
               className="form-control"
               placeholder="Enter Password"
