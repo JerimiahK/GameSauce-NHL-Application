@@ -3,12 +3,6 @@ const bcrypt = require("bcrypt");
 const favoriteTeams = require("./FavoriteTeams");
 
 const userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
   email: {
     type: String,
     required: true,
