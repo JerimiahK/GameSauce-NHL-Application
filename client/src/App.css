@@ -41,8 +41,11 @@
 }
 
 .currentGameBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #282828;
-  height: 100%;
+  height: 100vh;
   color: #C5C6C7;
   border-radius: 7px;
   box-shadow: 0px 0px 12px 1px #92b9e0;
@@ -51,6 +54,11 @@
 .currentGameHeader {
   height: 40%;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
 }
 
 .headerRow {
@@ -107,25 +115,9 @@
   width: 100%;
 }
 
-.row {
-  height: 25%;
-}
-
-.row p {
-  margin-bottom: 0;
-}
-
-.lastRow {
-  border-bottom: none;
-}
-
-.columnLeft {
-  /* border-right: 1px solid #fffefe; */
-}
-
 .liveStat {
   font-size: 120%;
-  font-weight: 100;
+  font-weight: 400;
   text-decoration: none;
 }
 
