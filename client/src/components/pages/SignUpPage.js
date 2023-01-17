@@ -9,14 +9,17 @@ export default function SignUp() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    try {
+      const mutationResponse = await addUser({
+        variables: {
+          ...formState,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    } catch (error) {
+      console.log(JSON.stringify(error));
+    }
   };
 
   const handleChange = (event) => {
@@ -37,12 +40,12 @@ export default function SignUp() {
               Email Address
             </label>
             <input
-              type="email"
-              value={formState.email}
+              onChange={handleChange}
+              name="email"
+              type="text"
               className="form-control"
               placeholder="Enter Email"
               id="userSignUpEmail"
-              onChange={handleChange}
             />
           </div>
           <div className="inputBox">
@@ -54,12 +57,12 @@ export default function SignUp() {
               Create A Password
             </label>
             <input
-            value={formState.password}
+              onChange={handleChange}
+              name="password"
               type="password"
               className="form-control"
               placeholder="Enter Password"
               id="userSignUpPassword"
-              onChange={handleChange}
             />
           </div>
           <div className="formButtonContainer">

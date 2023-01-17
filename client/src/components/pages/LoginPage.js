@@ -1,16 +1,53 @@
-
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 export default function Login() {
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
   return (
     <div className="currentGame">
       <div id="loginBox" className="currentGameBox">
-        <form id="loginForm">
+        <form onChange={handleFormSubmit} id="loginForm">
           <h1>LOGIN</h1>
           <div className="inputBox">
             <label htmlFor="userEmail" name="email" className="form-label">
               Email Address
             </label>
             <input
+              onChange={handleChange}
               type="email"
               className="form-control"
               placeholder="Enter Email"
@@ -18,10 +55,15 @@ export default function Login() {
             />
           </div>
           <div className="inputBox">
-            <label htmlFor="userPassword" name="password" className="form-label">
+            <label
+              htmlFor="userPassword"
+              name="password"
+              className="form-label"
+            >
               Password
             </label>
             <input
+              onChange={handleChange}
               type="password"
               className="form-control"
               placeholder="Enter Password"
