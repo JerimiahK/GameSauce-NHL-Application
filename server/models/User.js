@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const favoriteTeams = require("./FavoriteTeams");
 
 const userSchema = new Schema({
   username: {
@@ -19,6 +20,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 12,
   },
+  favoriteTeams: [favoriteTeams.schema],
 });
 
 userSchema.pre("save", async function (next) {
