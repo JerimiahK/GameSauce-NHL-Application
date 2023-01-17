@@ -7,17 +7,14 @@ export default function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
 
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -30,13 +27,12 @@ export default function Login() {
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
     setFormState({
       email: "",
       password: "",
     });
   };
+
   return (
     <div className="currentGame">
       <div id="loginBox" className="currentGameBox">
