@@ -6,7 +6,7 @@ export default function SignUp() {
           <h1>SIGN-UP</h1>
           <div class="mb-3">
             <label for="userEmail" name="email" class="form-label">
-              Enter Your Email Address
+              Email Address
             </label>
             <input
               type="email"

@@ -31,8 +31,8 @@ export default function Login() {
           </button>
         </form>
         <p id="loginCreate">
-          Don't Have An Account? Click <a href="/signup">Here</a>{" "}
-          To Create An Account!
+          Don't Have An Account? Click <a href="/signup">Here</a> To Create An
+          Account!
         </p>
       </div>
     </div>
