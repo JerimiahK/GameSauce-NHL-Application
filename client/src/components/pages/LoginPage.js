@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../../utils/mutations";
+import { Container, TextField, Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import styled from "@emotion/styled";
 import Auth from "../../utils/auth";
 
+const StyledTextField = styled(TextField)({
+  width: "100%",
+  marginTop: "1.5rem",
+});
+
 export default function Login() {
-  const[formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(value);
+
     setFormState({
       ...formState,
       [name]: value,
@@ -20,7 +28,7 @@ export default function Login() {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState + "formState");
+    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -39,57 +47,46 @@ export default function Login() {
   };
 
   return (
-    <div className="currentGame">
-      <div id="loginBox" className="currentGameBox">
-        <form onChange={handleFormSubmit} id="loginForm">
-          <h1>LOGIN</h1>
-          <div className="inputBox">
-            <label htmlFor="userEmail" name="email" className="form-label">
-              Email Address
-            </label>
-            <input
-              onChange={handleChange}
-              type="email"
-              className="form-control"
-              placeholder="Enter Email"
-              id="userLoginEmail"
-            />
-          </div>
-          <div className="inputBox">
-            <label
-              htmlFor="userPassword"
-              name="password"
-              className="form-label"
+    <>
+      <Container>
+        <Box component="form" onSubmit={handleFormSubmit}>
+          <StyledTextField
+            placeholder="Your email"
+            name="email"
+            type="email"
+            value={formState.email}
+            onChange={handleChange}
+            label="email"
+            variant="standard"
+          />
+          <StyledTextField
+            placeholder="password"
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
+            label="password"
+            variant="standard"
+          />
+          <Box textAlign="center">
+            <Button
+              type="submit"
+              sx={{
+                mt: 5,
+                border: 1,
+                backgroundColor: "#92b9e0",
+                color: "#C5C6C7",
+              }}
             >
-              Password
-            </label>
-            <input
-              onChange={handleChange}
-              name="password"
-              type="password"
-              className="form-control"
-              placeholder="Enter Password"
-              id="userLoginPassword"
-            />
-          </div>
-          {/* {error ? (
-            <div>
-              <p className="error-text">
-                The provided credentials are incorrect
-              </p>
-            </div>
-          ) : null} */}
-          <div className="formButtonContainer">
-            <button id="loginButton" type="submit" className="btn formButton">
               Login
-            </button>
-          </div>
-        </form>
-        <p id="loginCreate">
-          Don't Have An Account? Click <a href="/signup">Here</a> To Create An
-          Account!
-        </p>
-      </div>
-    </div>
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+      <Typography id="signupCreate">
+        Don't Have An Account? Click <a href="/signup">Here</a> To Create An
+        Account!
+      </Typography>
+    </>
   );
 }

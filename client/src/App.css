@@ -137,22 +137,6 @@
   text-decoration: underline;
 }
 
-#loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-#loginBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .form-label {
   color: #92b9e0;
 }
@@ -170,7 +154,9 @@
   text-align: center;
 }
 
-#loginCreate {
+#signupCreate {
+  position: absolute;
+  bottom: 0;
   color: #C5C6C7;
   text-align: center;
 }

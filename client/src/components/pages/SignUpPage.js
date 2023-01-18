@@ -1,10 +1,23 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, TextField, Typography, Button } from "@mui/material";
+import styled from "@emotion/styled";
+import { Box } from "@mui/system";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { ADD_USER } from "../../utils/mutations";
 
-export default function SignUp() {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+const StyledTextField = styled(TextField)({
+  width: "100%",
+  marginTop: "1.2rem",
+  color: "white"
+});
+
+export default function SignUp(props) {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -31,52 +44,43 @@ export default function SignUp() {
   };
 
   return (
-    <div className="currentGame">
-      <div id="loginBox" className="currentGameBox">
-        <form onSubmit={handleFormSubmit} id="loginForm">
-          <h1>SIGN-UP</h1>
-          <div className="inputBox">
-            <label htmlFor="userEmail" name="email" className="form-label">
-              Email Address
-            </label>
-            <input
-              onChange={handleChange}
-              name="email"
-              type="text"
-              className="form-control"
-              placeholder="Enter Email"
-              id="userSignUpEmail"
-            />
-          </div>
-          <div className="inputBox">
-            <label
-              htmlFor="userPassword"
-              name="password"
-              className="form-label"
+    <>
+      <Link to="/signup"></Link>
+      <Container>
+        <Box component="form" onSubmit={handleFormSubmit}>
+          <StyledTextField
+            onChange={handleChange}
+            value={formState.email}
+            name="email"
+            type="email"
+            id="standard-basic"
+            label="Email"
+            variant="standard"
+          />
+
+          <StyledTextField
+            onChange={handleChange}
+            value={formState.password}
+            name="password"
+            type="password"
+            id="standard-basic"
+            label="Password"
+            variant="standard"
+          />
+          <Box textAlign="center">
+            <Button
+              type="submit"
+              sx={{ mt: 5, backgroundColor: "#92b9e0", color: "#C5C6C7" }}
             >
-              Create A Password
-            </label>
-            <input
-              onChange={handleChange}
-              name="password"
-              type="password"
-              className="form-control"
-              placeholder="Enter Password"
-              id="userSignUpPassword"
-            />
-          </div>
-          <div className="formButtonContainer">
-            <button id="loginButton" type="submit" className="btn formButton">
-              <a className="formButton" href="/">
-                Sign-Up
-              </a>
-            </button>
-          </div>
-        </form>
-        <p id="loginCreate">
-          Already Have An Account? Click <a href="/login">Here</a> To Login!
-        </p>
-      </div>
-    </div>
+              Create Account
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+      <Typography id="signupCreate">
+        Don't Have An Account? Click <a href="/signup">Here</a> To Create An
+        Account!
+      </Typography>
+    </>
   );
 }
