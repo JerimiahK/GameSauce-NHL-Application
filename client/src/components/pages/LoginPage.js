@@ -15,7 +15,6 @@ export default function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
 
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -25,7 +24,6 @@ export default function Login() {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -68,6 +66,13 @@ export default function Login() {
             label="password"
             variant="standard"
           />
+          {error ? (
+            <div>
+              <p className="error-text">
+                The provided credentials are incorrect
+              </p>
+            </div>
+          ) : null}
           <Box textAlign="center">
             <Button
               type="submit"
