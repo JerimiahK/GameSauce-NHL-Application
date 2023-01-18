@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const secret = "benderflow";
+const secret = "bender";
 const expiration = "2h";
 
 module.exports = {
@@ -21,12 +21,12 @@ module.exports = {
     } catch {
       console.log("Invalid token");
     }
-
+    console.log(req);
     return req;
   },
 
-  signToken: function ({ email, username, _id }) {
-    const payload = { email, username, _id };
+  signToken: function ({ email, _id }) {
+    const payload = { email, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };

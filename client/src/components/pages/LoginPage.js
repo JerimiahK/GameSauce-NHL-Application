@@ -4,20 +4,23 @@ import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
 export default function Login() {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const[formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
 
+  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log(value);
     setFormState({
       ...formState,
       [name]: value,
     });
   };
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    console.log(formState + "formState");
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -27,6 +30,8 @@ export default function Login() {
     } catch (e) {
       console.error(e);
     }
+
+    // clear form values
     setFormState({
       email: "",
       password: "",
@@ -60,17 +65,23 @@ export default function Login() {
             </label>
             <input
               onChange={handleChange}
+              name="password"
               type="password"
               className="form-control"
               placeholder="Enter Password"
               id="userLoginPassword"
             />
           </div>
+          {/* {error ? (
+            <div>
+              <p className="error-text">
+                The provided credentials are incorrect
+              </p>
+            </div>
+          ) : null} */}
           <div className="formButtonContainer">
             <button id="loginButton" type="submit" className="btn formButton">
-              <a className="formButton" href="/">
-                Login
-              </a>
+              Login
             </button>
           </div>
         </form>
