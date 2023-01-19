@@ -59,7 +59,7 @@ export default function NavTabs() {
               </Typography>
             </Button>
             <Button sx={{ minWidth: "0px" }}>
-              <LogoutIcon sx={{ color: "#92b9e0" }} />
+              <LogoutIcon onClick={logout} sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
                   color: "#C5C6C7",
@@ -70,7 +70,7 @@ export default function NavTabs() {
                     textDecoration: "none",
                   }}
                   color="inherit"
-                  href="/login"
+                  onClick={logout}
                 >
                   Logout
                 </Link>
