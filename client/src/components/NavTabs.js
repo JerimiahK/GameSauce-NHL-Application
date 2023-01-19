@@ -11,8 +11,8 @@ export default function NavTabs() {
     event.preventDefault();
     Auth.logout();
   };
-console.log(Auth.loggedIn);
-  return (
+  
+return (
     <div className="navContainer">
       <div className="headerText">
         <a id="navbarText" href="/">
