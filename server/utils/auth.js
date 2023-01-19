@@ -1,12 +1,13 @@
 const jwt = require("jsonwebtoken");
 
-const secret = "bender";
-const expiration = "2h";
+const secret = "creamiest";
+const expiration = "6h";
 
 module.exports = {
+  //Authentication Middleware Function
   authMiddleware: function ({ req }) {
     let token = req.body.token || req.query.token || req.headers.authorization;
-    // console.log(req.body);
+
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
     }
@@ -25,6 +26,7 @@ module.exports = {
     return req;
   },
 
+  //Token Sign Middleware Function
   signToken: function ({ email, _id }) {
     const payload = { email, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });

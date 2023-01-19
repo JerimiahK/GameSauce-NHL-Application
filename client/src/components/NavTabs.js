@@ -11,7 +11,7 @@ export default function NavTabs() {
     event.preventDefault();
     Auth.logout();
   };
-
+console.log(Auth.loggedIn);
   return (
     <div className="navContainer">
       <div className="headerText">
@@ -19,7 +19,7 @@ export default function NavTabs() {
           Game Sauce
         </a>
       </div>
-      {Auth.loggedIn() !== true ? (
+      {Auth.loggedIn() === true ? (
         <>
           <div className="headerButtons">
             <Button sx={{ minWidth: "0px" }}>

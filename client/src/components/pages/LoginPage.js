@@ -43,10 +43,6 @@ export default function Login() {
     });
   };
 
-  const authenticated = () => {
-    
-  }
-
   return (
     <>
       <Container>
