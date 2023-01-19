@@ -31,7 +31,6 @@ export default function Login() {
       const { data } = await login({
         variables: { ...formState },
       });
-
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -43,6 +42,10 @@ export default function Login() {
       password: "",
     });
   };
+
+  const authenticated = () => {
+    
+  }
 
   return (
     <>

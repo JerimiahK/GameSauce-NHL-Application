@@ -1,3 +1,11 @@
+const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
+let gameID;
+let currentTeamRecords;
+let gamesArray = [];
+let teamRecords = [];
+
+  
+
 export default function Homepage() {
   return (
     <div className="currentGameBox">
