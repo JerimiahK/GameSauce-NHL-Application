@@ -56,17 +56,22 @@
   height: 40%;
   text-align: center;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  flex-direction: column;
   justify-content: center;
 }
 
 .headerRow {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
 }
+
+.headerRowScore {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 
 .headerScoreDash {
   display: flex;
@@ -79,7 +84,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 45%;
+  width: 50%;
 }
 
 .headerTeam {
@@ -87,10 +92,18 @@
   font-size: 140%;
 }
 
+.teamRecord {
+  padding-bottom: 15px;
+}
+
 .headerPeriod {
   font-weight: 800;
   font-size: 125%;
-  margin: 20px 0 0 0;
+  margin: 0 0 10px 0;
+}
+
+.period {
+  padding-bottom: 4%;
 }
 
 .headerTime {

@@ -157,6 +157,8 @@ export default function Homepage() {
   return (
     <div className="currentGameBox">
       <div className="currentGameHeader">
+
+
         <div className="headerRow">
           <div className="col-5 headerColumn">
             <h6 className="headerTeam">{awayName}</h6>
@@ -165,7 +167,7 @@ export default function Homepage() {
             </p>
             <h1 className="headerScore">{awayScore}</h1>
           </div>
-          <div>
+          <div className="period">
             <p className="headerPeriod">{period}</p>
             <p className="headerTime">{time}</p>
           </div>
@@ -177,7 +179,20 @@ export default function Homepage() {
             <h1 className="headerScore">{homeScore}</h1>
           </div>
         </div>
+
+        {/* <div className="headerRowScore">
+          <div className="headerColumnScore">
+            <h1 className="headerScore">{awayScore}</h1>
+          </div>
+          <div className="headerColumnScore">
+            <h1 className="headerScore">{homeScore}</h1>
+          </div>
+        </div> */}
+
+
       </div>
+
+
       <div id="statsColumn" className="container text-center">
         <div className="currentRow">
           <div className="column">
