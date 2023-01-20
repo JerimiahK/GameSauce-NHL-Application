@@ -15,6 +15,10 @@ export default function Homepage() {
   const [homeLosses, setHomeLosses] = useState();
   const [homeTies, setHomeTies] = useState();
   const [homeScore, setHomeScore] = useState();
+  const [homeSOG, setHomeSOG] = useState();
+  const [homeFO, setHomeFO] = useState();
+  const [homeHits, setHomeHits] = useState();
+  const [homePIM, setHomePIM] = useState();
 
 
   const [awayName, setAwayName] = useState();
@@ -22,6 +26,10 @@ export default function Homepage() {
   const [awayLosses, setAwayLosses] = useState();
   const [awayTies, setAwayTies] = useState();
   const [awayScore, setAwayScore] = useState();
+  const [awaySOG, setAwaySOG] = useState();
+  const [awayFO, setAwayFO] = useState();
+  const [awayHits, setAwayHits] = useState();
+  const [awayPIM, setAwayPIM] = useState();
 
   async function getData() {
     //fetch to NHL API for current days general information on games (ie: total games)
@@ -132,6 +140,23 @@ export default function Homepage() {
       liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats.goals;
     setHomeScore(homeTeamScore);
 
+    const homeTeamSOG =
+      liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats.shots;
+    setHomeSOG(homeTeamSOG)
+
+    const homeTeamFO =
+      liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats
+        .faceOffWinPercentage;
+    setHomeFO(homeTeamFO)
+
+    const homeTeamHits =
+      liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats.hits;
+    setHomeHits(homeTeamHits)
+
+    const homeTeamPIM =
+      liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats.pim;
+    setHomePIM(homeTeamPIM)
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Away Team Data Below ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     const awayTeamName = liveData.liveData.boxscore.teams.away.team.name;
@@ -148,6 +173,23 @@ export default function Homepage() {
 
     const awayTeamScore = liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats.goals;
     setAwayScore(awayTeamScore)
+
+    const awayTeamSOG =
+      liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats.shots;
+    setAwaySOG(awayTeamSOG);
+
+    const awayTeamFO =
+      liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats
+        .faceOffWinPercentage;
+    setAwayFO(awayTeamFO);
+
+    const awayTeamHits =
+      liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats.hits;
+    setAwayHits(awayTeamHits);
+
+    const awayTeamPIM =
+      liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats.pim;
+    setAwayPIM(awayTeamPIM);
   }
 
   useEffect(() => {
@@ -179,59 +221,46 @@ export default function Homepage() {
             <h1 className="headerScore">{homeScore}</h1>
           </div>
         </div>
-
-        {/* <div className="headerRowScore">
-          <div className="headerColumnScore">
-            <h1 className="headerScore">{awayScore}</h1>
-          </div>
-          <div className="headerColumnScore">
-            <h1 className="headerScore">{homeScore}</h1>
-          </div>
-        </div> */}
-
-
       </div>
-
-
       <div id="statsColumn" className="container text-center">
         <div className="currentRow">
           <div className="column">
             <p className="staticValue">S.O.G:</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{awaySOG}</p>
           </div>
           <div className="column">
             <p className="staticValue">S.O.G:</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{homeSOG}</p>
           </div>
         </div>
         <div className="currentRow">
           <div className="column">
             <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">0%</p>
+            <p className="liveStat">{awayFO}</p>
           </div>
           <div className="column">
             <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">0%</p>
+            <p className="liveStat">{homeFO}</p>
           </div>
         </div>
         <div className="currentRow">
           <div className="column">
             <p className="staticValue">Hits</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{awayHits}</p>
           </div>
           <div className="column">
             <p className="staticValue">Hits</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{homeHits}</p>
           </div>
         </div>
         <div className="currentRow">
           <div className="column">
             <p className="staticValue">PIM</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{awayPIM}</p>
           </div>
           <div className="column">
             <p className="staticValue">PIM</p>
-            <p className="liveStat">0</p>
+            <p className="liveStat">{homePIM}</p>
           </div>
         </div>
       </div>
