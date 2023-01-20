@@ -16,7 +16,7 @@ return (
     <div className="navContainer">
       <div className="headerText">
         <a id="navbarText" href="/">
-          Game Sauce
+          GameSauce
         </a>
       </div>
       {Auth.loggedIn() === true ? (

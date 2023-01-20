@@ -31,7 +31,7 @@
 #navbarText {
   padding-left: 10px;
   color: #92b9e0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-size: 250%;
 }
@@ -94,7 +94,8 @@
 }
 
 .teamRecord {
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 40px;
 }
 
 .headerPeriod {
@@ -104,7 +105,7 @@
 }
 
 .period {
-  padding-bottom: 4%;
+  padding-bottom: 1%;
 }
 
 .headerTime {
@@ -238,4 +239,11 @@
 
 .gameScore {
   padding-right: 10px;
+}
+
+@media screen and (max-width: 370px) {
+  #navbarText{
+    padding: 0;
+    font-size: 190%;
+  }
 }
