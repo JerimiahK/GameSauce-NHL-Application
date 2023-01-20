@@ -53,6 +53,7 @@
 }
 
 .currentGameHeader {
+  padding: 30px;
   height: 40%;
   text-align: center;
   display: flex;
@@ -93,7 +94,7 @@
 }
 
 .teamRecord {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 .headerPeriod {
