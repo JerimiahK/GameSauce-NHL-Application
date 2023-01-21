@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Games from "./Games";
 
 export default function SelectedGame() {
   let gameID;
@@ -42,6 +43,8 @@ export default function SelectedGame() {
         };
       }
     }
+
+
 
     //creates a variable containing the URL for the NHL API to get the most current game feed stats using the gameID
     const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;

@@ -6,7 +6,7 @@ import SelectedGame from "./pages/SelectedGame";
 import Login from "./pages/LoginPage";
 import SignUp from "./pages/SignUpPage";
 
-export default function PageContainer() {
+export default function PageContainer(game) {
   return (
     <div className="page">
       <NavTabs />
@@ -14,7 +14,7 @@ export default function PageContainer() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/games" element={<Games />} />
-          <Route path="/games/:id" element={<SelectedGame />} />
+          <Route path={`/game/*`} element={<SelectedGame />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>

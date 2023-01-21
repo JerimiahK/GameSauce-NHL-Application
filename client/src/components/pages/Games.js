@@ -36,7 +36,7 @@ export default function Games() {
   return (
     <div id="allGames" className="currentGameBox">
       {games?.map((game) => (
-        <a href="/games/game">
+        <Link to={`/game/${game.id}`}>
           <div id="allGamesBox" className="container">
             <div className="allGamesTeamsBox">
               <div id="allGamesAway" className="allGamesRow">
@@ -50,7 +50,7 @@ export default function Games() {
             </div>
             <p className="gameStatus">{game.status}</p>
           </div>
-        </a>
+        </Link>
       ))}
       ;
     </div>
