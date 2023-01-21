@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import GamesCard from "./GamesCard";
 
 export default function Games() {
   const url = `http://statsapi.web.nhl.com/api/v1/schedule`;
@@ -34,6 +33,7 @@ export default function Games() {
    }, []);
 console.log(games);
   return (
+    
     <div id="allGames" className="currentGameBox">
       {games?.map((game) => (
         <div id="allGamesBox" className="container">
@@ -47,7 +47,7 @@ console.log(games);
               <p className="gameScore">{game.homeScore}</p>
             </div>
           </div>
-          <p className="gameStatus">Scheduled</p>
+          <p className="gameStatus">{game.status}</p>
         </div>
       ))}
     </div>
