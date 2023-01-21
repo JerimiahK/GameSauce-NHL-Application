@@ -97,12 +97,12 @@ export default function GamesCard() {
     <div id="allGamesBox" className="container">
       <div className="allGamesTeamsBox">
         <div id="allGamesAway" className="allGamesRow">
-          <p>{awayTeam}</p>
-          <p className="gameScore">{awayScore}</p>
+          <p></p>
+          <p className="gameScore"></p>
         </div>
         <div id="allGamesHome" className="allGamesRow">
-          <p>{homeTeam}</p>
-          <p className="gameScore">{homeScore}</p>
+          <p></p>
+          <p className="gameScore"></p>
         </div>
       </div>
       <p className="gameStatus">Scheduled</p>

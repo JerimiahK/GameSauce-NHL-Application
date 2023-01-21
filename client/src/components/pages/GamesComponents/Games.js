@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import GamesCard from "./GamesCard";
+// import GamesCard from "./GamesCard";
 
 export default function Games() {
   const url = `http://statsapi.web.nhl.com/api/v1/schedule`;
+  const [games, setTodaysGames] = useState()
 
   async function getData() {
     const currentData = await fetch(url, {
@@ -25,16 +26,37 @@ export default function Games() {
     }
 
     const todaysGames = gamesArray
-    console.log(todaysGames);
+    setTodaysGames(todaysGames)
   }
 
    useEffect(() => {
      getData();
    }, []);
-
+console.log(games);
   return (
     <div id="allGames" className="currentGameBox">
-      {}
+      {games?.map((game) => (
+        <div id="allGamesBox" className="container">
+          <div className="allGamesTeamsBox">
+            <div id="allGamesAway" className="allGamesRow">
+              <p>{game.awayName}</p>
+              <p className="gameScore">{game.awayScore}</p>
+            </div>
+            <div id="allGamesHome" className="allGamesRow">
+              <p>{game.homeName}</p>
+              <p className="gameScore">{game.homeScore}</p>
+            </div>
+          </div>
+          <p className="gameStatus">Scheduled</p>
+        </div>
+        // <GamesCard
+        // key={game.id}
+        // awayTeam={game.awayName}
+        // awayScore={game.awayScore}
+        // homeTeam={game.homeTeam}
+        // homeScore={game.homeScore}
+        // />
+      ))}
     </div>
   );
 }
