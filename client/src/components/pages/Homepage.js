@@ -82,7 +82,7 @@ export default function Homepage() {
       } else if (gamesArray[0].status === "In Progress" || "In Progress - Critical") {
         gameID = inProgress.pop().id;
       } else if (games.status === "Final") {
-        gameID = final.pop().iArray.at(-1);
+        gameID = final.pop().gamesArray.at(-1);
       }
     };
 
