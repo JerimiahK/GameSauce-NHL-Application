@@ -49,13 +49,6 @@ console.log(games);
           </div>
           <p className="gameStatus">Scheduled</p>
         </div>
-        // <GamesCard
-        // key={game.id}
-        // awayTeam={game.awayName}
-        // awayScore={game.awayScore}
-        // homeTeam={game.homeTeam}
-        // homeScore={game.homeScore}
-        // />
       ))}
     </div>
   );
