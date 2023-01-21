@@ -64,7 +64,7 @@ export default function Homepage() {
 
     //filters out an array of the games that are scheduled
     const scheduled = gamesArray.filter(
-      (status) => status.status === "Scheduled"
+      (status) => status.status === "Scheduled" || "Pre-Game"
     );
 
     //filters out an array of the games that are in progress
@@ -77,15 +77,15 @@ export default function Homepage() {
 
     // creates a function that contains logic to display the most current game to be played, being played, or the last game of the night that finished
     const gameIDScheduled = function () {
-      if (gamesArray[0].status === "Scheduled") {
-        gameID = scheduled[0].id;
+      if (gamesArray[0].status === "Scheduled" || "Pre-Game") {
+        gameID = gamesArray[0].id;
       } else if (gamesArray[0].status === "In Progress" || "In Progress - Critical") {
         gameID = inProgress.pop().id;
       } else if (games.status === "Final") {
         gameID = final.pop().gamesArray.at(-1);
       }
     };
-
+console.log(gamesArray[0].status);
     //calls the gameIDStatus function to determine what the most current game ID is based on the games status'
     gameIDScheduled();
     //creates a for loop to find the the current teams records based on comparing the gameID with the teams record ID
@@ -112,8 +112,6 @@ export default function Homepage() {
 
     //puts the live game data into a json format inside of variable
     const liveData = await liveGameFetch.json();
-    // console.log(liveData);
-    //grab all the information i need to send to HB
 
     const currentPeriod = liveData.liveData.linescore.currentPeriodOrdinal;
     setPeriod(currentPeriod)
@@ -199,8 +197,6 @@ export default function Homepage() {
   return (
     <div className="currentGameBox">
       <div className="currentGameHeader">
-
-
         <div className="headerRow">
           <div className="col-5 headerColumn">
             <h6 className="headerTeam">{awayName}</h6>
