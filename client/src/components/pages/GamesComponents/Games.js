@@ -1,6 +1,6 @@
+
 export default function Games() {
     return (
-      <div id="currentGame" className="currentGame">
         <div id="allGames" className="currentGameBox">
           <div id="allGamesBox" className="container">
             <div className="allGamesTeamsBox">
@@ -29,6 +29,5 @@ export default function Games() {
             <p className="gameStatus">Scheduled</p>
           </div>
         </div>
-      </div>
     );
 }

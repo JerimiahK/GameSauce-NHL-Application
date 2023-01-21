@@ -85,7 +85,7 @@ export default function Homepage() {
         gameID = final.pop().gamesArray.at(-1);
       }
     };
-console.log(gamesArray[0].status);
+    
     //calls the gameIDStatus function to determine what the most current game ID is based on the games status'
     gameIDScheduled();
     //creates a for loop to find the the current teams records based on comparing the gameID with the teams record ID

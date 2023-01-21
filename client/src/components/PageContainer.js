@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
-import Games from "./pages/Games"
+import Games from "./pages/GamesComponents/Games"
 import Login from "./pages/LoginPage";
 import SignUp from "./pages/SignUpPage";
 
