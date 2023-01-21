@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Games() {
   const url = `http://statsapi.web.nhl.com/api/v1/schedule`;
-  const [games, setTodaysGames] = useState()
+  const [games, setTodaysGames] = useState();
 
   async function getData() {
     const currentData = await fetch(url, {
@@ -24,32 +25,34 @@ export default function Games() {
       });
     }
 
-    const todaysGames = gamesArray
-    setTodaysGames(todaysGames)
+    const todaysGames = gamesArray;
+    setTodaysGames(todaysGames);
   }
 
-   useEffect(() => {
-     getData();
-   }, []);
-console.log(games);
+  useEffect(() => {
+    getData();
+  }, []);
+  console.log(games);
   return (
-    
     <div id="allGames" className="currentGameBox">
       {games?.map((game) => (
-        <div id="allGamesBox" className="container">
-          <div className="allGamesTeamsBox">
-            <div id="allGamesAway" className="allGamesRow">
-              <p>{game.awayName}</p>
-              <p className="gameScore">{game.awayScore}</p>
+        <a href="/games/game">
+          <div id="allGamesBox" className="container">
+            <div className="allGamesTeamsBox">
+              <div id="allGamesAway" className="allGamesRow">
+                <p>{game.awayName}</p>
+                <p className="gameScore">{game.awayScore}</p>
+              </div>
+              <div id="allGamesHome" className="allGamesRow">
+                <p>{game.homeName}</p>
+                <p className="gameScore">{game.homeScore}</p>
+              </div>
             </div>
-            <div id="allGamesHome" className="allGamesRow">
-              <p>{game.homeName}</p>
-              <p className="gameScore">{game.homeScore}</p>
-            </div>
+            <p className="gameStatus">{game.status}</p>
           </div>
-          <p className="gameStatus">{game.status}</p>
-        </div>
+        </a>
       ))}
+      ;
     </div>
   );
 }

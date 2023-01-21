@@ -59,6 +59,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .headerRow {
@@ -200,9 +201,10 @@
   font-size: 95%;
   background-color: #282828;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   border-radius: 7px;
   box-shadow: 0px 0px 12px 1px #92b9e0;
 }
@@ -215,6 +217,7 @@
 }
 
 .allGamesTeamsBox {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -230,6 +233,7 @@
 
 .gameStatus {
   height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -241,9 +245,16 @@
   padding-right: 10px;
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 320px) {
   #navbarText{
     padding: 0;
     font-size: 190%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .currentGameHeader {
+    padding: 0;
+    font-size: 90%;
   }
 }
