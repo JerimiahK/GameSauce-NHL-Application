@@ -32,17 +32,22 @@ const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
 
-  mongodb.connect(
-    process.env.MONGODB_URL,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    (err, client) => {
-      db = client.db();
-      app.listen(PORT, () => {
-        console.log(`Example app listening at http://localhost:${PORT}`);
-      });
-    }
-  );
-
+  // mongodb.connect(
+  //   process.env.MONGODB_URL,
+  //   { useNewUrlParser: true, useUnifiedTopology: true },
+  //   (err, client) => {
+  //     db = client.db();
+  //     app.listen(PORT, () => {
+  //       console.log(`Example app listening at http://localhost:${PORT}`);
+  //     });
+  //   }
+  // );
+db.once("open", () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
+});
   
 };
 
