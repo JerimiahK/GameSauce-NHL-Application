@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Games() {
   const url = `http://statsapi.web.nhl.com/api/v1/schedule`;
   const [games, setTodaysGames] = useState();
-  
+
   useEffect(() => {
     async function getData() {
       const currentData = await fetch(url, {

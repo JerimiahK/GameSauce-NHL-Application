@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 export default function SelectedGame() {
+  // console.log(window.location.pathname);
+  
 
   const [time, setTime] = useState();
   const [period, setPeriod] = useState();
@@ -26,6 +28,8 @@ export default function SelectedGame() {
   const [awayPIM, setAwayPIM] = useState();
 
   useEffect(() => {
+    const gameID = window.location.pathname;
+    const box = `https://statsapi.web.nhl.com/api/v1${gameID}/feed/live`;
     async function getData() {
       let gameID;
       let currentTeamRecords;
@@ -43,9 +47,7 @@ export default function SelectedGame() {
           };
         }
       }
-
-      //creates a variable containing the URL for the NHL API to get the most current game feed stats using the gameID
-      const box = `https://statsapi.web.nhl.com/api/v1/game/${gameID}/feed/live`;
+      // console.log(r.id);
 
       //fetches the most current games stats information
       const liveGameFetch = await fetch(box, {
@@ -54,6 +56,8 @@ export default function SelectedGame() {
 
       //puts the live game data into a json format inside of variable
       const liveData = await liveGameFetch.json();
+
+      console.log(liveData);
 
       const currentPeriod = liveData.liveData.linescore.currentPeriodOrdinal;
       setPeriod(currentPeriod);
@@ -66,14 +70,15 @@ export default function SelectedGame() {
       const homeTeamName = liveData.liveData.boxscore.teams.home.team.name;
       setHomeName(homeTeamName);
 
-      const homeTeamWins = currentTeamRecords.homeWins;
-      setHomeWins(homeTeamWins);
+      // const homeTeamWins = currentTeamRecords.homeWins;
+      // setHomeWins(homeTeamWins);
+      // console.log(currentTeamRecords);
 
-      const homeTeamLosses = currentTeamRecords.homeLosses;
-      setHomeLosses(homeTeamLosses);
+      // const homeTeamLosses = currentTeamRecords.homeLosses;
+      // setHomeLosses(homeTeamLosses);
 
-      const homeTeamTies = currentTeamRecords.homeTies;
-      setHomeTies(homeTeamTies);
+      // const homeTeamTies = currentTeamRecords.homeTies;
+      // setHomeTies(homeTeamTies);
 
       const homeTeamScore =
         liveData.liveData.boxscore.teams.home.teamStats.teamSkaterStats.goals;
@@ -100,15 +105,16 @@ export default function SelectedGame() {
 
       const awayTeamName = liveData.liveData.boxscore.teams.away.team.name;
       setAwayName(awayTeamName);
+      console.log(awayTeamName);
 
-      const awayTeamWins = currentTeamRecords.awayWins;
-      setAwayWins(awayTeamWins);
+      // const awayTeamWins = currentTeamRecords.awayWins;
+      // setAwayWins(awayTeamWins);
 
-      const awayTeamLosses = currentTeamRecords.awayLosses;
-      setAwayLosses(awayTeamLosses);
+      // const awayTeamLosses = currentTeamRecords.awayLosses;
+      // setAwayLosses(awayTeamLosses);
 
-      const awayTeamTies = currentTeamRecords.awayTies;
-      setAwayTies(awayTeamTies);
+      // const awayTeamTies = currentTeamRecords.awayTies;
+      // setAwayTies(awayTeamTies);
 
       const awayTeamScore =
         liveData.liveData.boxscore.teams.away.teamStats.teamSkaterStats.goals;
