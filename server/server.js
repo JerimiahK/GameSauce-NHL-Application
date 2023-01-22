@@ -1,7 +1,10 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
+const mongodb = require("mongodb").MongoClient;
+const mongoose = require("mongoose");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
+require("dotenv").config();
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
@@ -29,14 +32,18 @@ const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
 
-  db.once("open", () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port http://localhost:${PORT}!`);
-      console.log(
-        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
-      );
-    });
-  });
+  mongodb.connect(
+    process.env.MONGODB_URL,
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    (err, client) => {
+      db = client.db();
+      app.listen(PORT, () => {
+        console.log(`Example app listening at http://localhost:${PORT}`);
+      });
+    }
+  );
+
+  
 };
 
 startApolloServer(typeDefs, resolvers);
