@@ -23,6 +23,6 @@
   "homepage": "https://github.com/JerimiahK/gameSauceNHLApplication#readme",
   "dependencies": {
     "concurrently": "^7.6.0",
-    "dotenv": "^16.0.3"
+    "nodemon": "^2.0.20"
   }
 }
