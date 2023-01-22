@@ -223,6 +223,10 @@
   justify-content: space-between;
 }
 
+.allGamesLink {
+  text-decoration: none;
+}
+
 #allGamesTime {
   padding-right: 20px;
   display: flex;

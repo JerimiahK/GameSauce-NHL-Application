@@ -36,7 +36,7 @@ export default function Games() {
   return (
     <div id="allGames" className="currentGameBox">
       {games?.map((game) => (
-        <Link to={`/game/${game.id}`}>
+        <Link className="allGamesLink" to={`/game/${game.id}`}>
           <div id="allGamesBox" className="container">
             <div className="allGamesTeamsBox">
               <div id="allGamesAway" className="allGamesRow">
@@ -52,7 +52,6 @@ export default function Games() {
           </div>
         </Link>
       ))}
-      ;
     </div>
   );
 }
