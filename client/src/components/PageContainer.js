@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
-import Games from "./pages/Games"
-import SelectedGame from "./pages/SelectedGame";
+import Games from "./pages/selectedGames/Games"
+import SelectedGame from "./pages/selectedGames/SelectedGame";
 import Login from "./pages/LoginPage";
 import SignUp from "./pages/SignUpPage";
 
-export default function PageContainer(game) {
+export default function PageContainer() {
   return (
     <div className="page">
       <NavTabs />
