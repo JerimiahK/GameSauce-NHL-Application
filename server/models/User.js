@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const favoriteTeams = require("./FavoriteTeams");
 
 const userSchema = new Schema({
