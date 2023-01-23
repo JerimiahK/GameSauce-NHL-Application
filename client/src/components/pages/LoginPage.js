@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import { Container, TextField, Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
@@ -14,6 +15,7 @@ const StyledTextField = styled(TextField)({
 export default function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
+  let history = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +33,7 @@ export default function Login() {
       const { data } = await login({
         variables: { ...formState },
       });
-      Auth.login(data.login.token);
+      Auth.login(data.login.token, history);
     } catch (e) {
       console.error(e);
     }
