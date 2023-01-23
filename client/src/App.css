@@ -189,7 +189,6 @@
 #allGames {
   display: flex;
   justify-content: flex-start;
-  overflow: scroll;
 }
 
 #allGamesBox {
