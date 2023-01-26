@@ -37,7 +37,6 @@
 }
 
 .currentGame {
-  overflow: hidden;
   height: 100vh;
   margin-top: 20px;
 }
