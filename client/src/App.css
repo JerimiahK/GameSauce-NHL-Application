@@ -187,6 +187,7 @@
 }
 
 #allGames {
+  overflow-x: scroll;
   display: flex;
   justify-content: flex-start;
 }
