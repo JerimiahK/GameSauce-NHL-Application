@@ -37,6 +37,7 @@
 }
 
 .currentGame {
+  overflow: hidden;
   height: 100vh;
   margin-top: 20px;
 }
@@ -187,7 +188,7 @@
 }
 
 #allGames {
-  overflow-x: scroll;
+  overflow-y: scroll;
   display: flex;
   justify-content: flex-start;
 }
