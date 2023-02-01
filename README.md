@@ -8,4 +8,5 @@ App users can create accounts with an email and password, with the password bein
 
 ## Usage
 This application can be used by following the link provided below.
-Link:
+Link:https://gamesauce-project.herokuapp.com/
+
