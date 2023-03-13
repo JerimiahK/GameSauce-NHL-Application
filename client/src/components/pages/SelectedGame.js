@@ -160,7 +160,7 @@ export default function SelectedGame() {
   }, []);
 
   return (
-    <div className="currentGameBox">
+    <>
       <div className="currentGameHeader">
         <div className="col-5 headerColumn">
           <h6 className="headerTeam">{awayName}</h6>
@@ -223,6 +223,6 @@ export default function SelectedGame() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
