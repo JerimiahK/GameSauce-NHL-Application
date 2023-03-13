@@ -25,9 +25,17 @@ export default function SelectedGame() {
   const [awayPIM, setAwayPIM] = useState();
 
   useEffect(() => {
+    
+    // Grabs the ID from the game that was clicked by the user
     const gameID = window.location.pathname;
+    
+    // Creates a url using the gameID to get the game the user selected
     const box = `https://statsapi.web.nhl.com/api/v1${gameID}/feed/live`;
+    
+    // The base NHL API url used to get all of todays games
     const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
+    
+    // Function to get the data of the currently selected game 
     async function getData() {
       let currentTeamRecords;
       let teamRecords = [];
@@ -59,7 +67,7 @@ export default function SelectedGame() {
       const liveData = await gameFetch.json();
 
       for (let r of teamRecords) {
-        if (liveData.gamePk == r.id) {
+        if (liveData.gamePk === r.id) {
           currentTeamRecords = {
             homeWins: r.homeWins,
             homeLosses: r.homeLosses,
@@ -154,25 +162,23 @@ export default function SelectedGame() {
   return (
     <div className="currentGameBox">
       <div className="currentGameHeader">
-        <div className="headerRow">
-          <div className="col-5 headerColumn">
-            <h6 className="headerTeam">{awayName}</h6>
-            <p className="teamRecord">
-              {awayWins}-{awayLosses}-{awayTies}
-            </p>
-            <h1 className="headerScore">{awayScore}</h1>
-          </div>
-          <div className="period">
-            <p className="headerPeriod">{period}</p>
-            <p className="headerTime">{time}</p>
-          </div>
-          <div className="col-5 headerColumn">
-            <h6 className="headerTeam">{homeName}</h6>
-            <p className="teamRecord">
-              {homeWins}-{homeLosses}-{homeTies}
-            </p>
-            <h1 className="headerScore">{homeScore}</h1>
-          </div>
+        <div className="col-5 headerColumn">
+          <h6 className="headerTeam">{awayName}</h6>
+          <p className="teamRecord">
+            {awayWins}-{awayLosses}-{awayTies}
+          </p>
+          <h1 className="headerScore">{awayScore}</h1>
+        </div>
+        <div className="period">
+          <p className="headerPeriod">{period}</p>
+          <p className="headerTime">{time}</p>
+        </div>
+        <div className="col-5 headerColumn">
+          <h6 className="headerTeam">{homeName}</h6>
+          <p className="teamRecord">
+            {homeWins}-{homeLosses}-{homeTies}
+          </p>
+          <h1 className="headerScore">{homeScore}</h1>
         </div>
       </div>
       <div id="statsColumn" className="container text-center">
@@ -189,11 +195,11 @@ export default function SelectedGame() {
         <div className="currentRow">
           <div className="column">
             <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">{awayFO}</p>
+            <p className="liveStat">{awayFO}%</p>
           </div>
           <div className="column">
             <p className="staticValue">Faceoff Win %</p>
-            <p className="liveStat">{homeFO}</p>
+            <p className="liveStat">{homeFO}%</p>
           </div>
         </div>
         <div className="currentRow">

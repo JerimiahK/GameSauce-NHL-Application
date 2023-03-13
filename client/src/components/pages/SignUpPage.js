@@ -50,6 +50,7 @@ export default function SignUp(props) {
       <Container>
         <Box component="form" onSubmit={handleFormSubmit}>
           <StyledTextField
+            sx={{ backgroundColor: "white", border: "#92b9e0 5px solid" }}
             onChange={handleChange}
             value={formState.email}
             name="email"
@@ -62,6 +63,7 @@ export default function SignUp(props) {
           <StyledTextField
             onChange={handleChange}
             value={formState.password}
+            sx={{ backgroundColor: "white", border: "#92b9e0 5px solid" }}
             name="password"
             type="password"
             id="standard-basic"
@@ -71,7 +73,7 @@ export default function SignUp(props) {
           <Box textAlign="center">
             <Button
               type="submit"
-              sx={{ mt: 5, backgroundColor: "#92b9e0", color: "#C5C6C7" }}
+              sx={{ mt: 5, backgroundColor: "#92b9e0", color: "#fff" }}
             >
               Create Account
             </Button>
