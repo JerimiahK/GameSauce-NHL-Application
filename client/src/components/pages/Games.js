@@ -34,11 +34,10 @@ export default function Games() {
   }, [url]);
 
   return (
-    <div id="allGames" className="currentGameBox">
+    <>
       {games?.map((game) => (
         <Link className="allGamesLink" to={`/game/${game.id}`}>
           <div id="allGamesBox" className="container">
-            <div className="allGamesTeamsBox">
               <div id="allGamesAway" className="allGamesRow">
                 <p>{game.awayName}</p>
                 <p className="gameScore">{game.awayScore}</p>
@@ -47,11 +46,9 @@ export default function Games() {
                 <p>{game.homeName}</p>
                 <p className="gameScore">{game.homeScore}</p>
               </div>
-            </div>
-            <p className="gameStatus">{game.status}</p>
           </div>
         </Link>
       ))}
-    </div>
+    </>
   );
 }
