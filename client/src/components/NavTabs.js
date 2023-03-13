@@ -15,9 +15,10 @@ export default function NavTabs() {
 return (
     <div className="navContainer">
       <div className="headerText">
-        <a id="navbarText" href="/">
+        <a className="navbarText" href="/">
           GameSauce
         </a>
+        <p className="navbarQuote">Your Source For Hockey Scores</p>
       </div>
       {Auth.loggedIn() === true ? (
         <>
@@ -81,7 +82,7 @@ return (
       ) : (
         <>
           <div className="headerButtons">
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <HomeIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -92,7 +93,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/"
                 >
                   Home
@@ -110,7 +111,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/games"
                 >
                   Games
@@ -128,7 +129,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/login"
                 >
                   Login

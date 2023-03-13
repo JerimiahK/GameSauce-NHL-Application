@@ -10,8 +10,13 @@
   height: 100vh;
 }
 
+body {
+  background-color: #e4e7e9;
+}
+
 /* NavBar/Header Styling */
 .navContainer {
+  background-color: #282828;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,16 +28,18 @@
   align-items: flex-start;
 }
 
-.button {
-  min-width: 0px;
-}
-
-#navbarText {
+.navbarText {
   padding-left: 10px;
   color: #92b9e0;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-size: 250%;
+}
+
+.navbarQuote {
+  padding-left: 10px;
+  color: #fff;
+  font-size: 80%;
 }
 
 /* Currently Displayed Stats Box Styling */
@@ -124,6 +131,7 @@
   text-decoration: underline;
 }
 
+/* Sign Up/Login Page Styling */
 .form-label {
   color: #92b9e0;
 }
