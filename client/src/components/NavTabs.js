@@ -34,7 +34,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/"
                 >
                   Home
@@ -52,7 +52,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/games"
                 >
                   Games
@@ -70,7 +70,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   onClick={logout}
                 >
                   Logout
@@ -129,7 +129,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/login"
                 >
                   Login
