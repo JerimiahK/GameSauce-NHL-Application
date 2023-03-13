@@ -15,14 +15,15 @@ export default function NavTabs() {
 return (
     <div className="navContainer">
       <div className="headerText">
-        <a id="navbarText" href="/">
+        <a className="navbarText" href="/">
           GameSauce
         </a>
+        <p className="navbarQuote">Your Source For Hockey Scores</p>
       </div>
       {Auth.loggedIn() === true ? (
         <>
           <div className="headerButtons">
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <HomeIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -33,14 +34,14 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/"
                 >
                   Home
                 </Link>
               </Typography>
             </Button>
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <SportsHockeyIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -51,14 +52,14 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/games"
                 >
                   Games
                 </Link>
               </Typography>
             </Button>
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <LogoutIcon onClick={logout} sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -69,7 +70,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   onClick={logout}
                 >
                   Logout
@@ -81,7 +82,7 @@ return (
       ) : (
         <>
           <div className="headerButtons">
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <HomeIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -92,14 +93,14 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/"
                 >
                   Home
                 </Link>
               </Typography>
             </Button>
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <SportsHockeyIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -110,14 +111,14 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/games"
                 >
                   Games
                 </Link>
               </Typography>
             </Button>
-            <Button sx={{ minWidth: "0px" }}>
+            <Button>
               <LoginIcon sx={{ color: "#92b9e0" }} />
               <Typography
                 sx={{
@@ -128,7 +129,7 @@ return (
                   sx={{
                     textDecoration: "none",
                   }}
-                  color="inherit"
+                  color="#fff"
                   href="/login"
                 >
                   Login

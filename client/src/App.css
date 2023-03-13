@@ -10,8 +10,13 @@
   height: 100vh;
 }
 
+body {
+  background-color: #e4e7e9;
+}
+
 /* NavBar/Header Styling */
 .navContainer {
+  background-color: #282828;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,11 +28,7 @@
   align-items: flex-start;
 }
 
-.button {
-  min-width: 0px;
-}
-
-#navbarText {
+.navbarText {
   padding-left: 10px;
   color: #92b9e0;
   font-family: 'Montserrat', sans-serif;
@@ -35,20 +36,22 @@
   font-size: 250%;
 }
 
+.navbarQuote {
+  padding-left: 10px;
+  color: #fff;
+  font-size: 80%;
+}
+
 /* Currently Displayed Stats Box Styling */
 .currentGame {
   height: 100%;
+  color: #5b5b5b;
 }
 
 .currentGameBox {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #fff;
-  color: #505050;
-  border-radius: 7px;
-  box-shadow: 0px 0px 12px 1px #92b9e0;
 }
 
 .currentGameHeader {
@@ -56,7 +59,7 @@
   height: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
 }
 
 .headerColumn {
@@ -68,8 +71,10 @@
 }
 
 .headerTeam {
+  padding: 15px;
   text-align: center;
-  font-size: 150%;
+  font-size: 125%;
+  height: 80px;
 }
 
 .period {
@@ -89,7 +94,10 @@
 }
 
 .headerScore {
+  display: flex;
+  align-items: center;
   font-size: 350%;
+  height: 100%;
 }
 
 /* Stats Column on Homepage and Selected Games Page */
@@ -98,7 +106,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-weight: 700;
-  color: #505050;
+  color: #5b5b5b;
   height: 60%;
 }
 
@@ -124,6 +132,7 @@
   text-decoration: underline;
 }
 
+/* Sign Up/Login Page Styling */
 .form-label {
   color: #92b9e0;
 }
@@ -157,6 +166,7 @@
   text-align: center;
 }
 
+/* All Games Page Styling */
 #allGames {
   overflow-y: scroll;
   display: flex;
@@ -211,6 +221,7 @@
   padding-right: 10px;
 }
 
+/* Media Queries For Page Responsiveness */
 @media screen and (max-width: 320px) {
   #navbarText{
     padding: 0;
