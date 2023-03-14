@@ -10,7 +10,6 @@ export default function PageContainer() {
   return (
     <div className="page">
       <NavTabs />
-      <div id="currentGame" className="currentGame">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/games" element={<Games />} />
@@ -18,7 +17,6 @@ export default function PageContainer() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
-      </div>
     </div>
   );
 }

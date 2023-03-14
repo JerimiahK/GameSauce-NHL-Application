@@ -43,11 +43,6 @@ body {
 }
 
 /* Currently Displayed Stats Box Styling */
-.currentGame {
-  height: 100%;
-  color: #5b5b5b;
-}
-
 .currentGameBox {
   display: flex;
   flex-direction: column;

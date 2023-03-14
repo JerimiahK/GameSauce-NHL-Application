@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <>
-      <Container>
+      <Container style={style.form}>
         <Box component="form" onSubmit={handleFormSubmit}>
           <StyledTextField
             placeholder="Your email"
@@ -88,11 +88,19 @@ export default function Login() {
             </Button>
           </Box>
         </Box>
+        <Typography id="signupCreate">
+          Don't Have An Account? Click <a href="/signup">Here</a> To Create An
+          Account!
+        </Typography>
       </Container>
-      <Typography id="signupCreate">
-        Don't Have An Account? Click <a href="/signup">Here</a> To Create An
-        Account!
-      </Typography>
     </>
   );
+}
+
+const style = {
+  form: {
+    margin: 10,
+    backgroundColor: "black",
+    height: "100%",
+  }
 }
