@@ -1,24 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Container, TextField, Typography, Button } from "@mui/material";
-import styled from "@emotion/styled";
-import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { ADD_USER } from "../../utils/mutations";
 
-const StyledTextField = styled(TextField)({
-  width: "100%",
-  marginTop: "1.2rem",
-  color: "white"
-});
-
-export default function SignUp(props) {
+export default function SignUp() {
+  
   const [formState, setFormState] = useState({
     email: "",
     password: "",
   });
+
   const [addUser] = useMutation(ADD_USER);
+  
   let history = useNavigate();
 
   const handleFormSubmit = async (event) => {
@@ -45,45 +40,80 @@ export default function SignUp(props) {
   };
 
   return (
-    <>
-      <Link to="/signup"></Link>
-      <Container>
-        <Box component="form" onSubmit={handleFormSubmit}>
-          <StyledTextField
-            sx={{ backgroundColor: "white", border: "#92b9e0 5px solid" }}
-            onChange={handleChange}
-            value={formState.email}
-            name="email"
-            type="email"
-            id="standard-basic"
-            label="Email"
-            variant="standard"
-          />
-
-          <StyledTextField
-            onChange={handleChange}
-            value={formState.password}
-            sx={{ backgroundColor: "white", border: "#92b9e0 5px solid" }}
-            name="password"
-            type="password"
-            id="standard-basic"
-            label="Password"
-            variant="standard"
-          />
-          <Box textAlign="center">
-            <Button
-              type="submit"
-              sx={{ mt: 5, backgroundColor: "#92b9e0", color: "#fff" }}
-            >
-              Create Account
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-      <Typography id="signupCreate">
-        Don't Have An Account? Click <a href="/signup">Here</a> To Create An
-        Account!
-      </Typography>
-    </>
+    <div style={style.container}>
+      <form onSubmit={handleFormSubmit} style={style.form}>
+        <h1 style={style.header}>Welcome To GameSauce, Feel Free To Create An Account!</h1>
+        <TextField
+          style={style.input}
+          placeholder="Your Email"
+          name="email"
+          type="email"
+          value={formState.email}
+          onChange={handleChange}
+          label="Email"
+          variant="standard"
+        />
+        <TextField
+          style={style.input}
+          placeholder="Password"
+          name="password"
+          type="password"
+          value={formState.password}
+          onChange={handleChange}
+          label="Password"
+          variant="standard"
+        />
+        <Button
+          type="submit"
+          sx={{
+            mt: 5,
+            border: 1,
+            backgroundColor: "#92b9e0",
+            color: "#fff",
+          }}
+        >
+          Create
+        </Button>
+        <p style={style.text}>
+          Already Have An Account? Click <a href="/login">Here</a> To Login!
+        </p>
+      </form>
+    </div>
   );
 }
+
+const style = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  form: {
+    margin: 10,
+    height: "90vh",
+    width: "90vw",
+    backgroundColor: "#282828",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  input: {
+    width: "60%",
+    backgroundColor: "#fff",
+    border: "#92b9e0 5px solid",
+    marginTop: "1.2rem",
+  },
+  text: {
+    position: "absolute",
+    bottom: 20,
+    color: "#fff",
+    textAlign: "center",
+    padding: 25,
+    fontSize: 20,
+  },
+  header: {
+    color: "#fff",
+    textAlign: "center",
+  },
+};
