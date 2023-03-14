@@ -127,14 +127,6 @@ body {
   text-decoration: underline;
 }
 
-/* Sign Up/Login Page Styling */
-#signupCreate {
-  position: absolute;
-  bottom: 0;
-  color: #5b5b5b;
-  text-align: center;
-}
-
 /* All Games Page Styling */
 #allGamesBox {
   align-content: center;
