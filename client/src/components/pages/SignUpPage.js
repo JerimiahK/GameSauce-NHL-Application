@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button } from "@mui/material";
-import styled from "@emotion/styled";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { ADD_USER } from "../../utils/mutations";
-
-const StyledTextField = styled(TextField)({
-  width: "100%",
-  marginTop: "1.2rem",
-  color: "white"
-});
 
 export default function SignUp() {
   
@@ -50,7 +43,7 @@ export default function SignUp() {
     <div style={style.container}>
       <form onSubmit={handleFormSubmit} style={style.form}>
         <h1 style={style.header}>Welcome To GameSauce, Feel Free To Create An Account!</h1>
-        <StyledTextField
+        <TextField
           style={style.input}
           placeholder="Your Email"
           name="email"
@@ -60,7 +53,7 @@ export default function SignUp() {
           label="Email"
           variant="standard"
         />
-        <StyledTextField
+        <TextField
           style={style.input}
           placeholder="Password"
           name="password"
@@ -109,6 +102,7 @@ const style = {
     width: "60%",
     backgroundColor: "#fff",
     border: "#92b9e0 5px solid",
+    marginTop: "1.2rem",
   },
   text: {
     position: "absolute",

@@ -3,13 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import { TextField, Button } from "@mui/material";
-import styled from "@emotion/styled";
 import Auth from "../../utils/auth";
-
-const StyledTextField = styled(TextField)({
-  width: "100%",
-  marginTop: "1.5rem",
-});
 
 export default function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -48,7 +42,7 @@ export default function Login() {
     <div style={style.container}>
       <form onSubmit={handleFormSubmit} style={style.form}>
         <h1 style={style.header}>Welcome Back To GameSauce!</h1>
-        <StyledTextField
+        <TextField
           style={style.input}
           placeholder="Your Email"
           name="email"
@@ -58,7 +52,7 @@ export default function Login() {
           label="Email"
           variant="standard"
         />
-        <StyledTextField
+        <TextField
           style={style.input}
           placeholder="Password"
           name="password"
@@ -113,6 +107,7 @@ const style = {
     width: "60%",
     backgroundColor: "#fff",
     border: "#92b9e0 5px solid",
+    marginTop: "1.2rem",
   },
   text: {
     position: "absolute",
