@@ -47,6 +47,7 @@ export default function Login() {
   return (
     <div style={style.container}>
       <form onSubmit={handleFormSubmit} style={style.form}>
+        <h1 style={style.header}>Welcome Back To GameSauce!</h1>
         <StyledTextField
           style={style.input}
           placeholder="Your Email"
@@ -115,9 +116,14 @@ const style = {
   },
   text: {
     position: "absolute",
-    bottom: 0,
+    bottom: 20,
     color: "#fff",
     textAlign: "center",
-    padding: 15,
+    padding: 25,
+    fontSize: 20,
+  },
+  header: {
+    color: "#fff",
+    textAlign: "center",
   },
 };
