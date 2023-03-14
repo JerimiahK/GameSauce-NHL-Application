@@ -14,11 +14,14 @@ const StyledTextField = styled(TextField)({
 });
 
 export default function SignUp(props) {
+  
   const [formState, setFormState] = useState({
     email: "",
     password: "",
   });
+
   const [addUser] = useMutation(ADD_USER);
+  
   let history = useNavigate();
 
   const handleFormSubmit = async (event) => {

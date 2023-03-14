@@ -14,7 +14,7 @@ const StyledTextField = styled(TextField)({
 
 export default function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN);
   let history = useNavigate();
 
   const handleChange = (event) => {

@@ -133,36 +133,10 @@ body {
 }
 
 /* Sign Up/Login Page Styling */
-.form-label {
-  color: #92b9e0;
-}
-
-.formButton {
-  text-decoration: none;
-  text-align: center;
-  margin: 10px;
-  background-color: #92b9e0;
-  color: #282828;
-}
-
-.formButtonContainer {
-  width: 100%;
-  text-align: center;
-}
-
 #signupCreate {
   position: absolute;
   bottom: 0;
-  color: #C5C6C7;
-  text-align: center;
-}
-
-.inputBox {
-  display: flex;
-  flex-direction: column;
-}
-
-#todayGameText {
+  color: #5b5b5b;
   text-align: center;
 }
 
