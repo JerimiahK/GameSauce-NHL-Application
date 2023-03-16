@@ -6,7 +6,6 @@ This application is a full MERN stack application, that integrates the NHL's pub
 ## Usage
 This application can be used by following the link provided below. At this time the project is a personal project and not open for public contributions.
 Link: https://gamesauce-project.herokuapp.com/
-Screenshot: ![screenshot of the web application](/gameSauceNHLApplication/client/assets/Screen%20Shot%202023-01-31%20at%208.47.35%20PM.png)
 <a href="https://gamesauce-project.herokuapp.com/">
   <img src="./client/assets/screenshot.png">
 </a>
