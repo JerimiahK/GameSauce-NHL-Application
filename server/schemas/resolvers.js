@@ -34,6 +34,7 @@ const resolvers = {
         email,
         password,
       });
+      console.log(user);
       const token = signToken(user);
 
       return { token, user };
