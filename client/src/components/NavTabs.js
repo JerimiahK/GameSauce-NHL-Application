@@ -26,7 +26,7 @@ return (
                     textDecoration: "none",
                   }}
                   color="#fff"
-                  href="/"
+                  to="/"
                 >
                   Home
                 </Link>
@@ -44,7 +44,7 @@ return (
                     textDecoration: "none",
                   }}
                   color="#fff"
-                  href="/games"
+                  to="/games"
                 >
                   Games
                 </Link>
