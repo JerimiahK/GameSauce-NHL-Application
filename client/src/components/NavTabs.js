@@ -1,14 +1,16 @@
-import { Link, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
 import SportsHockeyIcon from "@mui/icons-material/SportsHockey";
+import { Link } from "react-router-dom";
+
 
 export default function NavTabs() {
   
 return (
     <div className="navContainer">
-      <div className="headerText">
-        <a className="navbarText" href="/">
+      <div>
+        <a className="headerText" href="/">
           GameSauce
         </a>
         <p className="navbarQuote">Your Source For Hockey Scores</p>
@@ -22,13 +24,9 @@ return (
                 }}
               >
                 <Link
-                  sx={{
-                    textDecoration: "none",
-                  }}
-                  color="#fff"
-                  to="/"
+                to="/"
                 >
-                  Home
+                  <p className="navbarText">Home</p>
                 </Link>
               </Typography>
             </Button>
@@ -40,13 +38,9 @@ return (
                 }}
               >
                 <Link
-                  sx={{
-                    textDecoration: "none",
-                  }}
-                  color="#fff"
                   to="/games"
                 >
-                  Games
+                  <p className="navbarText">Games</p>
                 </Link>
               </Typography>
             </Button>

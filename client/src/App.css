@@ -28,12 +28,17 @@ body {
   align-items: flex-start;
 }
 
-.navbarText {
+.headerText {
   padding-left: 10px;
   color: #92b9e0;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-size: 250%;
+}
+
+.navbarText {
+  color: white;
+  text-decoration: none;
 }
 
 .navbarQuote {
