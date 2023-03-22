@@ -26,7 +26,7 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 // });
 
-const startApolloServer = async (typeDefs, resolvers) => {
+const startApolloServer = async () => {
   await server.start();
   server.applyMiddleware({ app });
 
