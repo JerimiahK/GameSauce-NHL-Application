@@ -7,7 +7,6 @@
 
 .page {
   font-family: 'Rubik', sans-serif;
-  height: 100vh;
 }
 
 body {
@@ -49,14 +48,20 @@ body {
 
 /* Currently Displayed Stats Box Styling */
 .currentGameBox {
+  margin: 1%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .currentGameHeader {
+  margin: 2% 8% 2% 8%;
+  box-shadow: 5px 5px 8px rgb(143, 143, 143);
+  background-color: #92b9e0;
+  border-radius: 7px;
+  color: #282828;
   padding: 20px;
-  height: 40%;
+  height: 30vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,17 +107,17 @@ body {
 
 /* Stats Column on Homepage and Selected Games Page */
 #statsColumn {
-  border-top: 1px solid #282828;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 700;
-  color: #5b5b5b;
-  margin-bottom: 10%;
+  color: #282828;
 }
 
 .currentRow {
-  margin: 3%;
+  border-radius: 7px;
+  box-shadow: 5px 5px 8px rgb(143, 143, 143);
+  margin: 0% 8% 2% 8%;
   background-color: #92b9e0;
   display: flex;
   flex-direction: row;
@@ -128,12 +133,7 @@ body {
   width: 50%;
 }
 
-.column:nth-child(odd) {
-  border-right: 1px solid #282828;
-}
-
 .liveStat {
-  /* padding: 2% 0 5% 0; */
   font-size: 120%;
   font-weight: 400;
   text-decoration: none;
@@ -149,12 +149,13 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 20vh;
+  height: 17vh;
   margin: 3%;
   color: #fff;
-  font-size: 100%;
+  font-size: 150%;
   background-color: #282828;
   box-shadow: 3px 13px 7px #7c7c7c;
+  border-radius: 7px;
 }
 
 #allGamesBoxFinal {
@@ -166,7 +167,7 @@ body {
 }
 
 .allGamesRow {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -175,6 +176,7 @@ body {
 
 .gameBoxContainer {
   background-color: #92b9e0;
+  border-radius: 7px;
   box-shadow: 3px 5px 8px #606464 inset;
   margin: 2.5%;
 }
@@ -188,10 +190,15 @@ body {
 }
 
 /* Media Queries For Page Responsiveness */
-@media screen and (max-width: 320px) {
-  #navbarText{
-    padding: 0;
-    font-size: 190%;
+@media screen and (max-width: 500px) {
+  #allGamesBox{
+    font-size: 100%;
+  }
+  .currentGameHeader {
+    margin: 2% 0 2% 0;
+  }
+  .currentRow {
+    margin: 2% 0 2% 0;
   }
 }
 
@@ -200,4 +207,8 @@ body {
     padding: 0;
     font-size: 90%;
   }
+    #navbarText {
+      padding: 0;
+      font-size: 190%;
+    }
 }
