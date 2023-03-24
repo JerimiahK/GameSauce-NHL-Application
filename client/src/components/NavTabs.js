@@ -9,40 +9,36 @@ export default function NavTabs() {
   
 return (
     <div className="navContainer">
-      <div>
-        <a className="headerText" href="/">
-          GameSauce
-        </a>
-        <p className="navbarQuote">Your Source For Hockey Scores</p>
-      </div>
-          <div className="headerButtons">
+        <div>
+            <a className="headerText" href="/">
+                GameSauce
+            </a>
+            <p className="navbarQuote">Your Source For Hockey Scores</p>
+        </div>
+        <div className="headerButtons">
             <Button>
-              <HomeIcon sx={{ color: "#92b9e0" }} />
-              <Typography
-                sx={{
-                  color: "#C5C6C7",
-                }}
-              >
-                <Link
-                to="/"
+                <HomeIcon sx={{color: "#92b9e0"}} />
+                <Typography
+                    sx={{
+                        color: "#C5C6C7",
+                    }}
                 >
-                  <p className="navbarText">Home</p>
-                </Link>
-              </Typography>
+                    <Link to="/" style={style.navButton}>
+                        <p className="navbarText">Home</p>
+                    </Link>
+                </Typography>
             </Button>
             <Button>
-              <SportsHockeyIcon sx={{ color: "#92b9e0" }} />
-              <Typography
-                sx={{
-                  color: "#C5C6C7",
-                }}
-              >
-                <Link
-                  to="/games"
+                <SportsHockeyIcon sx={{color: "#92b9e0"}} />
+                <Typography
+                    sx={{
+                        color: "#C5C6C7",
+                    }}
                 >
-                  <p className="navbarText">Games</p>
-                </Link>
-              </Typography>
+                    <Link to="/games" style={style.navButton}>
+                        <p className="navbarText">Games</p>
+                    </Link>
+                </Typography>
             </Button>
             {/* <Button>
               <LoginIcon sx={{ color: "#92b9e0" }} />
@@ -62,7 +58,13 @@ return (
                 </Link>
               </Typography>
             </Button> */}
-          </div>
+        </div>
     </div>
-  );
+);
+}
+
+const style = {
+  navButton: {
+    textDecoration: "none"
+  }
 }
