@@ -33,22 +33,40 @@ export default function Games() {
     getData();
   }, [url]);
 
+  
+
   return (
-    <>
-      {games?.map((game) => (
-        <Link className="allGamesLink" to={`/game/${game.id}`}>
-          <div id="allGamesBox" className="container">
-              <div id="allGamesAway" className="allGamesRow">
-                <p>{game.awayName}</p>
-                <p className="gameScore">{game.awayScore}</p>
+      <>
+          {games?.map((game) => (
+              <div className="gameBoxContainer">
+                  <Link className="allGamesLink" to={`/game/${game.id}`}>
+                      {game.status === "Final" ? (
+                          <div id="allGamesBoxFinal" className="container">
+                              <div id="allGamesAway" className="allGamesRow">
+                                  <p>{game.awayName}</p>
+                                  <p className="gameScore">{game.awayScore}</p>
+                              </div>
+                              <div id="allGamesHome" className="allGamesRow">
+                                  <p>{game.homeName}</p>
+                                  <p className="gameScore">{game.homeScore}</p>
+                              </div>
+                              <h3>Final</h3>
+                          </div>
+                      ) : (
+                          <div id="allGamesBox" className="container">
+                              <div id="allGamesAway" className="allGamesRow">
+                                  <p>{game.awayName}</p>
+                                  <p className="gameScore">{game.awayScore}</p>
+                              </div>
+                              <div id="allGamesHome" className="allGamesRow">
+                                  <p>{game.homeName}</p>
+                                  <p className="gameScore">{game.homeScore}</p>
+                              </div>
+                          </div>
+                      )}
+                  </Link>
               </div>
-              <div id="allGamesHome" className="allGamesRow">
-                <p>{game.homeName}</p>
-                <p className="gameScore">{game.homeScore}</p>
-              </div>
-          </div>
-        </Link>
-      ))}
-    </>
+          ))}
+      </>
   );
 }

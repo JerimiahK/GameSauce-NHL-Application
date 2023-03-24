@@ -102,26 +102,38 @@ body {
 
 /* Stats Column on Homepage and Selected Games Page */
 #statsColumn {
+  border-top: 1px solid #282828;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 700;
   color: #5b5b5b;
-  height: 60%;
+  margin-bottom: 10%;
 }
 
 .currentRow {
+  margin: 3%;
+  background-color: #92b9e0;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 10vh;
   text-align: center;
   width: 50%;
 }
 
+.column:nth-child(odd) {
+  border-right: 1px solid #282828;
+}
+
 .liveStat {
-  padding-top: 5%;
+  /* padding: 2% 0 5% 0; */
   font-size: 120%;
   font-weight: 400;
   text-decoration: none;
@@ -134,18 +146,37 @@ body {
 
 /* All Games Page Styling */
 #allGamesBox {
-  align-content: center;
-  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
+  margin: 3%;
+  color: #fff;
+  font-size: 100%;
+  background-color: #282828;
+  box-shadow: 3px 13px 7px #7c7c7c;
+}
+
+#allGamesBoxFinal {
+  margin: 3%;
   color: #fff;
   font-size: 95%;
-  background-color: #282828;
+  background-color: #c93535;
+  box-shadow: 3px 13px 7px #7c7c7c;
 }
 
 .allGamesRow {
-  padding: 12px;
+  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.gameBoxContainer {
+  background-color: #92b9e0;
+  box-shadow: 3px 5px 8px #606464 inset;
+  margin: 2.5%;
 }
 
 .allGamesLink {
@@ -153,7 +184,7 @@ body {
 }
 
 .gameScore {
-  padding-right: 10px;
+  padding: 5%;
 }
 
 /* Media Queries For Page Responsiveness */
